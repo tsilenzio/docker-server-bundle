@@ -26,8 +26,30 @@ services:
       - "traefik.frontend.auth.basic=${ADMIN_USERNAME}:${ADMIN_PASSWORD}"
     networks:
       - traefik
+      - drone
+
+  drone:
+    image: drone/drone:1.0.0
+    container_name: drone
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/drone:/data
+    networks:
+      - drone
+    depends_on:
+      - traefik
+
 
 networks:
-  traefik:
+  web:
     external: true
     name: traefik
+  drone:
+    external: false
+    name: drone
