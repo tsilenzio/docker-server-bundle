@@ -35,7 +35,7 @@ $ docker-compose up -d
 - [ ] setup Drone to use PostgreSQL instead of SQLite
 - [ ] setup Drone to automatically deploy my homepage and other projects
 - [x] add PostgreSQL
-- [x] setup PostgreSQL to automatically add multiple databases and users respectively
+- [ ] setup PostgreSQL to automatically add multiple databases and users respectively
 - [ ] setup web UI for managing PostgreSQL
 - [ ] add MongoDB
 - [ ] setup web UI for managing MongoDB
