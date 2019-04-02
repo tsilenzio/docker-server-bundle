@@ -58,8 +58,7 @@ services:
       - .env
     restart: always
     expose:
-      - "3000"
-      - "9229"
+      - "5432"
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
     networks:
